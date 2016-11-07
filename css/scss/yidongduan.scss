@@ -1,0 +1,378 @@
+$d-list:320px,360px,375px,412px,414px,768px;
+*{
+    padding: 0;
+    margin: 0;
+//  position: relative;
+    list-style: none;
+}
+html{
+//      height: 500px;
+    font-size: 100px;
+}
+a{
+    text-decoration: none;
+}
+body{
+
+    font-size: 15px;
+    background-image:url(../img/bj2.jpg);
+    
+}
+$design-size:750px;
+//设计稿的大小
+@each $w in $d-list{
+    @media screen and (min-width:#{$w}){
+        html{
+            font-size: 100px * $w /$design-size;
+        }
+    }
+}
+
+//头
+#header{
+    width: 100%;
+    height: 1.4rem;
+    background:rgba(0,0,0,0.5);
+    z-index: 1;
+    .left{
+        width: 20px;
+        height:20px;
+        position: absolute;
+//      background: blue;
+        left: 0.3rem;
+        top: 0.4rem;
+        z-index: 2;
+        img{
+            width: 100%;
+        }
+    }
+    .right{
+        width: 20px;
+        height:20px;
+        position: absolute;
+//      background: blue;
+        right: 0.3rem;
+        top: 0.4rem;
+        z-index: 2;
+        img{
+            width: 100%;
+        }
+    }
+    #gequ{
+        position: absolute;
+        top: 0.3rem;
+        left:0;
+        right:0;
+        margin: 0 auto;
+        width: 5rem;
+        height:0.8rem;
+//      background:red;
+        span{
+            font-size: 16px;
+            color: #fff;
+            font-family: '黑体';
+        }
+        .span{
+            font-size: 14px;
+            color: #888;
+            font-family: '黑体';
+        }
+    }
+}
+#geci{
+    width: 100%;
+    height: 6rem;
+//  background: blue;
+}
+#quan{  
+           position: absolute;
+           top: 2.6rem;
+           left: 0;
+           right: 0;
+           margin: 0 auto;
+           width:4rem;
+           height: 4rem;
+           margin: 0 auto;
+           border:2px solid rgba(0,0,0,0.3);
+           border-radius: 50%; 
+           background-image: url(../img/55.jpg);
+           background-size: cover;
+           animation: move 20s linear  infinite;
+            z-index: 2;
+            overflow: hidden;
+            img{
+                width: 100%;
+            }
+}
+ @keyframes move{
+            from{
+               transform:rotate(0);
+            }
+            to{
+              transform:rotate(360deg);  
+            }
+        }
+ 
+#play{
+    width:40px;
+    height: 40px;
+    position: absolute;
+    bottom:30px;
+    left:0px;
+    right: 0;
+    margin: 0 auto;
+//  background: #000;
+    color: #fff;
+
+    line-height: 30px;
+    border-radius: 50%;
+    background-image: url(../img/b1.jpg);
+    background-size: 100%;
+    z-index: 1;
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+#previous{
+    position: absolute;
+    width:30px;
+    height: 30px;
+    position: absolute;
+    bottom:35px;
+    right: 90px;
+    border-radius: 50%;
+    background-image: url(../img/y2.jpg);
+    background-size: 100%;
+//  background: blue;
+    z-index: 1;
+
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+#next{
+
+    width:30px;
+    height:30px;
+    position: absolute;
+    bottom:35px;
+    left: 90px;
+    border-radius: 50%;
+    background-image: url(../img/y1.jpg);
+//  background: red;
+    background-size: 100%;
+    z-index: 1;
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+
+#progress{
+    position: absolute;
+    z-index: 1;
+    width: 5rem;
+    height: 0.1rem;
+    background:#888;
+    bottom: 2.5rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+     
+}
+#current-time{
+    position: absolute;
+    top:10px;
+    left: 0;
+    font-size: 10px;
+    color: #fff;
+}
+#duration{
+    position: absolute;
+    top:10px;
+    left: 40px;
+    font-size: 10px;
+    color: #fff;
+}
+#xiex{
+    position: absolute;
+    top:7px;
+    left: 28px;
+    color: #fff;
+}
+#p-i{
+    position: absolute;
+    width: 1px;
+    height: 5px;
+    /*border-radius: 50%;*/
+    background: #D84C29;
+    top:0px;
+    left: 0;
+
+}
+#pii{
+    position: absolute;
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
+    background: #fff;
+    top:-5px;
+    left: 0;
+
+}
+#xinjia{
+    position: absolute;
+    bottom: 2.7rem;
+    left: 0;
+    right: 0;
+    width: 80%;
+    height: 1rem;
+//  background: red;    
+    margin: 0 auto;
+
+    .tp{        
+        margin-top: 5px;
+        margin-left: 25px;
+        width: 15%;
+        height:0.5rem;
+        float: left;
+    }
+    img{
+        text-align: center;
+
+        width: 70%;
+    }
+}
+#yinliang{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 60%;
+    height: 0.1rem;
+    background: #888;
+    #r{
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        right: 0px;
+        top: - 0.15rem;
+        width: 20px;
+        height: 20px;
+    }
+}
+#jin{
+    position: absolute;
+    top:1.5rem;
+    left: 30px;
+    width: 20px;
+    height:17px;
+    z-index: 2;
+    background-image:url(../img/yl3.png);
+    background-size: 100%;
+}
+#bottom-left{
+    width: 30px;
+    height:30px;
+    position: absolute;
+    bottom: 0.8rem;
+    left: 0.4rem;
+    img{
+        width: 100%;
+    }
+}
+#bottom-right{
+    width: 30px;
+    height:30px;
+    position: absolute;
+    bottom: 0.8rem;
+    right: 0.4rem;
+    img{
+        width: 100%;
+    }
+}
+
+#right-chu{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0rem;
+    background:#fff;
+    z-index: 5;
+    display: block;
+    display: none;
+    .top{
+
+        width: 100%;
+        height:50px;
+//      background: red;
+        line-height: 50px;
+        border-bottom: 1px solid #888;
+        .sc{
+            text-align: center;
+            width: 33%;
+            float: left;
+            color: #888;
+        }
+        .bf{
+            text-align: center;
+            width: 33%;
+            float: left;
+              
+            
+        }
+        .qk{ 
+            text-align: center;           
+            width: 33%;
+            float: left;
+            color: #888;
+        }
+    }
+    #gb{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30px;
+        height:20px;
+        background: #888;
+        z-index: 5;
+        color: #fff;
+    }
+    
+        #uls{
+            position: absolute;
+
+            top: 50px;
+            display: block;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        #uls li{
+            display: block;
+            width:100%;
+            margin-top: 30px;
+            height: 30px;
+            cursor: pointer;
+            line-height: 30px;
+            border-bottom: 1px solid #888;
+            
+        }
+        #uls .active span{
+            color: red;
+            font-family: '黑体';
+        
+        }
+        #uls li span{
+            width: 100%;
+            line-height: 16px;
+            margin-top: 30px;
+            padding-left: 20px;
+            font-size: 15px;
+            color: #000000;
+            
+        }
+}
