@@ -96,7 +96,7 @@ $(document).ready(function() {
 	})
 
 
-	yinliang.on("touchend", function(e) {
+	yinliang.on("click", function(e) {
 		audio.volume = e.offsetX / yinliang.width();
 		jin.removeAttr("v");
 	});
