@@ -70,7 +70,7 @@ $(document).ready(function() {
 	})
 
 	pi.on("touchend", false);
-	bcir.on("touchend", false);
+
 
 
 	
@@ -81,18 +81,23 @@ $(document).ready(function() {
 	
 	
 //	音量进度
-	bcir.on("mousedown", function(e) {
+	bcir.on("touchstart", false);
+	bcir.on("touchstart", function(e) {
 		var r = bcir.width() / 2;
-		var starts = r - e.offsetX;
-		$(document).on("mousemove", function(e) {
-			var left = e.clientX - yinliang.position().left + starts;
-			var x = left / yinliang.width();
+		var offsetX=e.originalEvent.changedTouches[0].clientX-bcir.offset().left;
+		var starts = r - offsetX;
+		$(document).on("touchmove", function(e) {
+			var left = e.originalEvent.changedTouches[0].clientX-yinliang.offset().left+starts;
+			x = left / yinliang.width();
+			if( x>1||x<0){
+				return;
+			}
 			audio.volume = x;
 		})
 		return false;
 	})
-	$(document).on("mouseup", function() {
-		$(document).off("mousemove");
+	$(document).on("touchend", function() {
+		$(document).off("touchmove")
 	})
 
 
@@ -221,6 +226,7 @@ $(audio).on("volumechange", function() {
 		chu1.css("display","block").animate({"height":"7rem"},1000)
 	})
 	gb.on("touchend",function(){
-		chu1.css("display","none").animate({"height":"0rem"},1000)
+		chu1.css("display","none")
+		
 	})
 })
